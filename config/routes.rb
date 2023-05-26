@@ -4,6 +4,9 @@ Rails.application.routes.draw do
       resources :users do
         resources :training_logs
       end
+      
+      get 'login', to: 'sessions#new'
+      post 'login', to: 'sessions#create'
     end
   end
 end
