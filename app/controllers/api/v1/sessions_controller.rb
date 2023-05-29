@@ -19,6 +19,13 @@ module Api
         end
       end
 
+      def destroy
+        session[:user_id] = nil
+        render json: {
+          message: "ログアウトしました"
+        }, status: :ok
+      end
+
       private
       def login(email, password)
         user = User.find_by(email: email)
@@ -31,4 +38,4 @@ module Api
 
     end
   end
-end
+end:
