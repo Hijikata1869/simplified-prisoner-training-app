@@ -33,7 +33,7 @@ module Api
         return false unless user && user.authenticate(password)
 
         session[:user_id] = user.id
-        return true
+        true
       end
 
     end
